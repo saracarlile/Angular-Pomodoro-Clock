@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Pomodoro Clock</title>
+	<meta name="JavaScript Project" content="Pomodoro Clock">
+	<meta name="Sara C" content="Pomodoro Clock">
+	<link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+
+	<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Pomodoro Clock</h1>
+	<div class="main">
+		<div class="heading">
+			<div class="heading-cell">
+				<p>Break</p>
+				<button id="minus-break">-</button><span id="break-time">15</span><button  id="plus-break">+</button>
+			</div>
+			<div class="heading-cell">
+				<p>Session</p>
+				<button id="minus-session">-</button><span id="session-time">25</span><button id="plus-session">+</button>
+			</div>
+		</div>
+		<div class="content">
+			<div id="progress-bar"></div>
+			<h2>Work Session</h2>
+			<h2><span id="minutes">24</span>:<span id="seconds">59</span></h2>
+		</div>
+		<div class="controls">
+			<button id="control-btn">Start</button>
+			<button id="stop-btn">Stop</button>
+			<button id="control-btn">Reset</button>
+		</div>
+	</div>
+    <script  type='application/javascript' src="js/jquery-3.1.1.min.js"></script>
+	<script type='application/javascript' src='js/disable-double-tap.js'></script>
+    <script type='application/javascript' src='js/fastclick.js'></script>
+	<script src="js/scripts.js"></script>
+</body>
+
+</html>
+<!--http://marcgg.com/blog/2014/04/09/phonegap-steroids-hybrid-native-app-tips/-->
