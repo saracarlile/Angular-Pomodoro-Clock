@@ -1,10 +1,11 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="en" ng-app="pomodoroClock">
 
 <head>
 	<meta charset="utf-8">
-
+	<script src="js/custom.modernizr.js"></script>
+    <script src="js/angular.min.js"></script>	
 	<title>Pomodoro Clock</title>
 	<meta name="JavaScript Project" content="Pomodoro Clock">
 	<meta name="Sara C" content="Pomodoro Clock">
@@ -19,15 +20,15 @@
 
 <body>
     <h1>Pomodoro Clock</h1>
-	<div class="main">
+	<div  ng-controller="clockController" class="main">
 		<div class="heading">
 			<div class="heading-cell">
 				<p>Break</p>
-				<button id="minus-break">-</button><span id="break-time">15</span><button  id="plus-break">+</button>
+				<button id="minus-break">-</button><span id="break-time" ng-model="breakLength">{{breakLength}}</span><button  id="plus-break">+</button>
 			</div>
 			<div class="heading-cell">
 				<p>Session</p>
-				<button id="minus-session">-</button><span id="session-time">25</span><button id="plus-session">+</button>
+				<button id="minus-session">-</button><span id="session-time" ng-model="sessionLength">{{sessionLength}}</span><button id="plus-session">+</button>
 			</div>
 		</div>
 		<div class="content">
@@ -44,7 +45,7 @@
     <script  type='application/javascript' src="js/jquery-3.1.1.min.js"></script>
 	<script type='application/javascript' src='js/disable-double-tap.js'></script>
     <script type='application/javascript' src='js/fastclick.js'></script>
-	<script src="js/scripts.js"></script>
+	<script src="js/scripts-angular.js"></script>
 </body>
 
 </html>
