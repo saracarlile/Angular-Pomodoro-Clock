@@ -21,22 +21,22 @@
 <body>
     <h1>Pomodoro Clock</h1>
 	<div  ng-controller="clockController" class="main">
-		<div ng-controller="setTimeController" class="heading">
+		<div class="heading">
 			<div class="heading-cell">
 				<p>Break</p>
-				<button ng-click="subtractBreak()" id="minus-break">-</button><span ng-model="breakLength">{{breakLength}}</span><button id="plus-break" ng-click="addBreak()">+</button>
+				<button ng-click="subtractBreak(1)" id="minus-break">-</button><span ng-model="breakLength">{{breakLength}}</span><button id="plus-break" ng-click="addBreak(1)">+</button>
 			</div>
 			<div class="heading-cell">
 				<p>Session</p>
-				<button ng-click="subtractSession()" id="minus-session">-</button><span ng-model="sessionLength">{{sessionLength}}</span><button ng-click="addSession()" id="plus-session">+</button>
+				<button ng-click="subtractSession(1)" id="minus-session">-</button><span ng-model="sessionLength">{{sessionLength}}</span><button ng-click="addSession(1)" id="plus-session">+</button>
 			</div>
 		</div>
-		<div class="content" ng-controller="displayTimeController">
+		<div class="content">
 			<div id="progress-bar"></div>
 			<h2 ng-model="sessionName">{{sessionName}}</h2>
 			<h2 ng-model="timeLeft">{{timeLeft}}</h2>
 		</div>
-		<div ng-controller="startStopResetController" class="controls">
+		<div class="controls">
 			<button id="control-btn">Start</button>
 			<button id="stop-btn">Stop</button>
 			<button id="control-btn">Reset</button>

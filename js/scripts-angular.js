@@ -2,50 +2,41 @@
 var app = angular.module('pomodoroClock', []);
 
 app.controller('clockController', function($scope) {
-  $scope.breakLength = 5;
-  $scope.sessionLength = 25;
-  $scope.timeLeft = $scope.sessionLength;
-  $scope.sessionName = 'Work Session';
-  $scope.currentTotal;
+    $scope.breakLength = 5;
+    $scope.sessionLength = 29;
+    $scope.timeLeft = $scope.sessionLength;
+    $scope.sessionName = 'Work Session';
+    $scope.currentTotal;
 
- 
-
-});
-
-
-app.controller('setTimeController', function($scope) {
-
-     $scope.subtractBreak = function() { 
-        if ($scope.breakLength > 0) {
-            $scope.breakLength--;
+    $scope.subtractBreak = function(time) { 
+        if ($scope.breakLength > 1) {
+            $scope.breakLength -= time;
         }
     }
 
-    $scope.addBreak = function(){
+    $scope.addBreak = function(time){
         if ($scope.breakLength<= 60) {
-            $scope.breakLength++;
+            $scope.breakLength += time;
+            
         }
     }
-    $scope.subtractSession = function() { 
-        if ($scope.sessionLength > 0) {
-            $scope.sessionLength--;
+    $scope.subtractSession = function(time) { 
+        if ($scope.sessionLength > 1) {
+            $scope.sessionLength -= time;
+                $scope.timeLeft = $scope.sessionLength;
         }
     }
 
-    $scope.addSession = function(){
+    $scope.addSession = function(time){
         if ($scope.sessionLength<= 60) {
-            $scope.sessionLength++;
+            $scope.sessionLength += time;
+            $scope.timeLeft = $scope.sessionLength;
         }
     }  
 
+    
+
+
 });
 
-app.controller('displayTimeController', function($scope) {
-       
-  
-});
 
-app.controller('startStopResetController', function($scope) {
-       
-  
-});
