@@ -8,28 +8,28 @@ app.controller('clockController', function($scope) {
     $scope.sessionName = 'Work Session';
     $scope.currentTotal;
 
-    $scope.subtractBreak = function(time) { 
+    $scope.subtractBreak = function() { 
         if ($scope.breakLength > 1) {
-            $scope.breakLength -= time;
+            $scope.breakLength -= 1;
         }
     }
 
-    $scope.addBreak = function(time){
+    $scope.addBreak = function(){
         if ($scope.breakLength<= 60) {
-            $scope.breakLength += time;
+            $scope.breakLength += 1;
             
         }
     }
-    $scope.subtractSession = function(time) { 
+    $scope.subtractSession = function() { 
         if ($scope.sessionLength > 1) {
-            $scope.sessionLength -= time;
+            $scope.sessionLength -= 1;
                 $scope.timeLeft = $scope.sessionLength;
         }
     }
 
-    $scope.addSession = function(time){
+    $scope.addSession = function(){
         if ($scope.sessionLength<= 60) {
-            $scope.sessionLength += time;
+            $scope.sessionLength += 1;
             $scope.timeLeft = $scope.sessionLength;
         }
     }  
