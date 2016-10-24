@@ -2,7 +2,7 @@ var app = angular.module('pomodoroClock', []);
 
 app.controller('clockController', function ($scope) {
     $scope.breakLength = 5;
-    $scope.sessionLength = 29;
+    $scope.sessionLength = 25;
     $scope.timeLeft = $scope.sessionLength + ":00";
     $scope.sessionName = 'Work Session';
     $scope.currentTotal;
@@ -53,7 +53,7 @@ app.controller('clockController', function ($scope) {
                 $scope.timeLeft = Math.floor(total / 60) + ":" + seconds;  //mins + ":" + seconds
                 $scope.$apply();
             }
-            if (total <= 0){
+            if (total <= 0) {
                 $scope.sessionName = 'Break Session';
                 $scope.timeLeft = $scope.breakLength + ":00";
                 $scope.$apply();
@@ -61,25 +61,25 @@ app.controller('clockController', function ($scope) {
         }
         if ($scope.sessionName === 'Break Session') {
             document.body.style.background = '#E6E6FA';
-            var readBreakTime =  $scope.timeLeft;
-            var splitBreakTime =  readBreakTime.split(':');
+            var readBreakTime = $scope.timeLeft;
+            var splitBreakTime = readBreakTime.split(':');
             var minsIntBreak = parseInt(splitBreakTime[0], 10);
             var secsIntBreak = parseInt(splitBreakTime[1], 10);
             var totalBreak = minsIntBreak * 60 + secsIntBreak;
             totalBreak--;
             var secondsBreak = totalBreak % 60;
-            if(secondsBreak< 10){
+            if (secondsBreak < 10) {
                 secondsBreak = "0" + secondsBreak;
             }
-            $scope.timeLeft = Math.floor(totalBreak/ 60) + ":" + secondsBreak;
+            $scope.timeLeft = Math.floor(totalBreak / 60) + ":" + secondsBreak;
             $scope.$apply();
         }
-        if (totalBreak <= 0){
-                $scope.sessionName = 'Work Session';
-                $scope.timeLeft = $scope.sessionLength + ":00";
-                $scope.$apply();
-                document.body.style.background = 'white';
-            }
+        if (totalBreak <= 0) {
+            $scope.sessionName = 'Work Session';
+            $scope.timeLeft = $scope.sessionLength + ":00";
+            $scope.$apply();
+            document.body.style.background = 'white';
+        }
 
     }
 
@@ -92,9 +92,9 @@ app.controller('clockController', function ($scope) {
     }
 
     $scope.resetCountdown = function () {
-         $scope.breakLength = 5;
-         $scope.sessionLength = 29;
-         $scope.$apply();
+        $scope.breakLength = 5;
+        $scope.sessionLength = 29;
+        $scope.$apply();
     }
 
 });
