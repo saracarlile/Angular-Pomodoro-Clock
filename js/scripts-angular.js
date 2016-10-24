@@ -88,8 +88,13 @@ app.controller('clockController', function ($scope) {
     }
 
     $scope.stopCountdown = function () {
-        console.log("not running");
         window.clearInterval(myTimer);
+    }
+
+    $scope.resetCountdown = function () {
+         $scope.breakLength = 5;
+         $scope.sessionLength = 29;
+         $scope.$apply();
     }
 
 });
