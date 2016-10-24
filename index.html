@@ -37,8 +37,8 @@
 			<h2 ng-model="timeLeft">{{timeLeft}}</h2>
 		</div>
 		<div class="controls">
-			<button id="control-btn">Start</button>
-			<button id="stop-btn">Stop</button>
+			<button id="control-btn" ng-click="countdown()">Start</button>
+			<button id="stop-btn" ng-click="stopCountdown()">Stop</button>
 			<button id="control-btn">Reset</button>
 		</div>
 	</div>
