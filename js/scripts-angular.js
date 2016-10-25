@@ -93,8 +93,8 @@ app.controller('clockController', function ($scope) {
 
     $scope.resetCountdown = function () {
         $scope.breakLength = 5;
-        $scope.sessionLength = 29;
-        $scope.$apply();
+        $scope.sessionLength = 25;
+        $scope.timeLeft = $scope.sessionLength + ":00";    
     }
 
 });
