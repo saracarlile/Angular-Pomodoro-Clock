@@ -149,6 +149,7 @@ button:focus {
 @media only screen and (max-width: 500px) {
   h1{
     font-size: 32px;
+    text-align: none;
   }
 
 }
