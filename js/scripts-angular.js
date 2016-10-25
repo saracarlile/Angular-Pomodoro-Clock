@@ -14,7 +14,7 @@ app.controller('clockController', function ($scope) {
     }
 
     $scope.addBreak = function () {
-        if ($scope.breakLength <= 60) {
+        if ($scope.breakLength < 60) {
             $scope.breakLength += 1;
 
         }
@@ -27,7 +27,7 @@ app.controller('clockController', function ($scope) {
     }
 
     $scope.addSession = function () {
-        if ($scope.sessionLength <= 60) {
+        if ($scope.sessionLength < 60) {
             $scope.sessionLength += 1;
             $scope.timeLeft = $scope.sessionLength + ":00";
         }
