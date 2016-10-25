@@ -24,11 +24,11 @@
 		<div class="heading">
 			<div class="heading-cell">
 				<p>Break</p>
-				<button ng-click="subtractBreak()" id="minus-break">-</button><span ng-model="breakLength">{{breakLength}}</span><button id="plus-break" ng-click="addBreak()">+</button>
+				<button ng-click="subtractBreak()" id="minus-break">-</button><span ng-model="breakLength" id="breakTime">{{breakLength}}</span><button id="plus-break" ng-click="addBreak()">+</button>
 			</div>
 			<div class="heading-cell">
-				<p>Session</p>
-				<button ng-click="subtractSession()" id="minus-session">-</button><span ng-model="sessionLength">{{sessionLength}}</span><button ng-click="addSession()" id="plus-session">+</button>
+				<p>Work</p>
+				<button ng-click="subtractSession()" id="minus-session">-</button><span ng-model="sessionLength" id="workTime">{{sessionLength}}</span><button ng-click="addSession()" id="plus-session">+</button>
 			</div>
 		</div>
 		<div class="content">

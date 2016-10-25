@@ -91,10 +91,11 @@ app.controller('clockController', function ($scope) {
         window.clearInterval(myTimer);
     }
 
-    $scope.resetCountdown = function () {
+    $scope.resetCountdown = function () {       
+        $scope.sessionName = 'Work Session';
         $scope.breakLength = 5;
         $scope.sessionLength = 25;
-        $scope.timeLeft = $scope.sessionLength + ":00";    
+        $scope.timeLeft = $scope.sessionLength + ":00";           
     }
 
 });
