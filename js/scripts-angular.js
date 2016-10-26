@@ -11,27 +11,27 @@ app.controller('clockController', function ($scope) {
         if ($scope.breakLength > 1) {
             $scope.breakLength -= 1;
         }
-    }
+    };
 
     $scope.addBreak = function () {
         if ($scope.breakLength < 60) {
             $scope.breakLength += 1;
 
         }
-    }
+    };
     $scope.subtractSession = function () {
         if ($scope.sessionLength > 1) {
             $scope.sessionLength -= 1;
             $scope.timeLeft = $scope.sessionLength + ":00";
         }
-    }
+    };
 
     $scope.addSession = function () {
         if ($scope.sessionLength < 60) {
             $scope.sessionLength += 1;
             $scope.timeLeft = $scope.sessionLength + ":00";
         }
-    }
+    };
 
 
     var myTimer = null;
@@ -85,17 +85,17 @@ app.controller('clockController', function ($scope) {
 
     $scope.countdown = function () {
         myTimer = window.setInterval(updateText, 1000);
-    }
+    };
 
     $scope.stopCountdown = function () {
         window.clearInterval(myTimer);
-    }
+    };
 
     $scope.resetCountdown = function () {       
         $scope.sessionName = 'Work Session';
         $scope.breakLength = 5;
         $scope.sessionLength = 25;
         $scope.timeLeft = $scope.sessionLength + ":00";           
-    }
+    };
 
 });
